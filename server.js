@@ -16,6 +16,10 @@ app.get("/", cors(), (req, res) => {
   res.send("cors!");
 });
 
+app.post("/", cors(), (req, res) => {
+  res.send("cors!!");
+});
+
 // get요청시 "API Running" 을 response 해주기
 app.get("/", (req, res) => {
   res.send("API Running");
