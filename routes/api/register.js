@@ -2,7 +2,11 @@ const express = require("express");
 const User = require("../../models/User"); // User model 불러오기
 const router = express.Router(); // express의 Router 사용
 const bcrypt = require("bcrypt"); // 암호화 모듈
+const cors = require("cors");
 
+const app = express();
+
+app.use(cors());
 // @route  POST api/register
 // @desc   Register user
 // @access Public
