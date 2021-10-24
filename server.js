@@ -2,12 +2,19 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const cors = require("cors");
+const { use } = require("./routes/api/register");
+
 const app = express();
 
 dotenv.config({ path: "./config.env" });
 
 app.use(express.json({ extended: false }));
 app.use("/api/register", require("./routes/api/register"));
+
+app.get("/", cors(), (req, res) => {
+  res.send("cors!");
+});
 
 // get요청시 "API Running" 을 response 해주기
 app.get("/", (req, res) => {
