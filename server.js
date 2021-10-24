@@ -21,7 +21,6 @@ mongoose.connect(process.env.MONGO, () => {
   console.log("DB 연결중...");
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Server listening...");
 });
