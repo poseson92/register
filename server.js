@@ -2,17 +2,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const router = require("./routes/register");
 const cors = require("cors");
-const { use } = require("./routes/api/register");
 
 const app = express();
 
 app.use(cors());
 
 dotenv.config({ path: "./config.env" });
-
 app.use(express.json({ extended: false }));
-app.use("/api/register", require("./routes/api/register"));
+
+app.use("/", router);
 
 app.get("/", (req, res) => {
   res.send("API Running");
